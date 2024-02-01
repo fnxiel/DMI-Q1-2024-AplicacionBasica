@@ -1,20 +1,28 @@
+import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, TextInput, View, Button } from 'react-native';
+import {PiePagina} from './components/PiePagina'
+import EncabezadoPrincipal, {Encabezado} from './components/Encabezado';
+import { Formulario } from './components/Formulario';
+import { styles } from './styles/contenedores';
 
+
+//JSX
 export default function App() {
+  
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <EncabezadoPrincipal texto="Bienvenida para el usuario"></EncabezadoPrincipal>
+      <EncabezadoPrincipal texto="Este es una aplicación de saludos" destacar={true}></EncabezadoPrincipal>
+      <Encabezado texto="Bienvenido"></Encabezado>
+      <Encabezado texto="Por favor, escribe tu nombre"></Encabezado>
+      <Text>Luego te daremos la bienvenida</Text>
+      <Formulario></Formulario>
       <StatusBar style="auto" />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+
+
