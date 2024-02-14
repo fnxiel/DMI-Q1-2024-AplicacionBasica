@@ -1,14 +1,6 @@
 import { Text, View } from 'react-native'
 import { styles } from '../styles/contenedores'
 
-//  const EncabezadoPrincipal = ({texto, destacar}) => {
-//     const estilo = !(destacar === true) ? styles.negrita : styles.fuenteAzulNegrita;
-
-//     return <View>
-//       <Text style={estilo}>{texto}</Text>
-//     </View>
-//   }
-
 //Solo un default.
 function EncabezadoPrincipal({texto, destacar}) {
   const estilo = !(destacar === true) ? styles.negrita : styles.fuenteAzulNegrita

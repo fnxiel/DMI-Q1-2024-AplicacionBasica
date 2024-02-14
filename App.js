@@ -1,27 +1,37 @@
-import { useState } from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { Text, TextInput, View, Button } from 'react-native';
-import {PiePagina} from './components/PiePagina'
-import EncabezadoPrincipal, {Encabezado} from './components/Encabezado';
-import { Formulario } from './components/Formulario';
-import { styles } from './styles/contenedores';
+//Navegacion
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
 
+//Componentes de react native
+import { StyleSheet } from 'react-native';
+
+//Pantallas
+import { Tabs } from './components/Tabs';
+import { NavegacionGabetero } from './components/Drawer';
+import { TopTabs } from './components/TopTabs';
+
+const styles = StyleSheet.create({
+  container:{
+    flex: 1,
+    backgroundColor: '#fff',
+    marginTop: 100,
+    marginLeft: 12,
+    marginRight: 12
+  }
+})
 
 //JSX
 export default function App() {
   
-  return (
-    <View style={styles.container}>
-      <EncabezadoPrincipal texto="Bienvenida para el usuario"></EncabezadoPrincipal>
-      <EncabezadoPrincipal texto="Este es una aplicación de saludos" destacar={true}></EncabezadoPrincipal>
-      <Encabezado texto="Bienvenido"></Encabezado>
-      <Encabezado texto="Por favor, escribe tu nombre"></Encabezado>
-      <Text>Luego te daremos la bienvenida</Text>
-      <Formulario></Formulario>
-      <StatusBar style="auto" />
-    </View>
+  return (<NavigationContainer style={styles.container}>
+          {/* <Tabs/> */}
+          {/* <NavegacionGabetero/> */}
+          <TopTabs/>
+    </NavigationContainer>
   );
 }
+
+
 
 
 
